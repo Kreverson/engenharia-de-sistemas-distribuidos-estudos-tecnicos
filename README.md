@@ -1,6 +1,6 @@
 # 📚 Engenharia de Sistemas Distribuídos — Estudos Técnicos
 
-> Compilação de conceitos, padrões e experiências reais extraídas de casos como Knight Capital, Pix, Nubank, Slack, Instagram, Amazon Dynamo, LinkedIn/Kafka, Twitter, WhatsApp, Uber, Ticket Master, Tinder, Dropbox, WebCrawler e mais.
+> Compilação de conceitos, padrões e experiências reais extraídas de casos como Knight Capital, Pix, Nubank, Slack, Instagram, Amazon Dynamo, LinkedIn/Kafka, Twitter, WhatsApp, Uber, Ticket Master, Tinder, Dropbox, WebCrawler, YouTube, Facebook e mais.
 
 ---
 
@@ -47,7 +47,7 @@
 
 ## Módulo 5 — Conceitos Avançados de System Design (Hello Interview Series)
 
-> Novos arquivos baseados em deep dives e vídeos técnicos da série Hello Interview
+> Arquivos baseados em deep dives e vídeos técnicos da série Hello Interview
 
 | Arquivo | Conteúdo |
 |---|---|
@@ -64,40 +64,95 @@
 
 ---
 
+## Módulo 6 — System Design Aplicado: Vídeo, Busca e Tempo Real
+
+> Breakdowns completos de problemas clássicos com análise profunda de componentes
+
+| Arquivo | Conteúdo |
+|---|---|
+| `30_design_youtube_video_streaming.md` | YouTube: multipart upload, pre-signed URLs, chunking, transcoding, HLS/DASH, CDN, ABR |
+| `31_api_gateway.md` | API Gateway: história, componentes internos, middleware, roteamento, transformação de protocolo |
+| `32_object_storage_blob.md` | Object Storage (S3): flat namespace, immutable writes, pre-signed URLs, multipart upload, 11 noves |
+| `33_design_newsfeed_fanout.md` | Newsfeed (Facebook): fan-out on write/read, pre-computação, celebrity problem, hot key com múltiplas réplicas |
+| `34_design_facebook_post_search.md` | Facebook Post Search: inverted index do zero, Redis Sorted Sets, Kafka, escala logarítmica, Count-Min Sketch, bigramas |
+| `35_design_yelp_geoespacial.md` | Yelp: PostGIS, busca geoespacial, full-text search, constraint de unicidade, média incremental em transação |
+| `36_design_instagram_auction.md` | Instagram Auction: SSE vs WebSockets, Redis Pub/Sub, SERIALIZABLE isolation, SQS delay, Temporal IO |
+| `37_ml_system_design_content_moderation.md` | ML System Design: framework 6 etapas, transformer multimodal, multi-task learning, two-stage inference, calibração |
+| `38_aprendizado_carreira_engenharia.md` | Como aprender system design, BFS vs DFS, entrevistas de manager, AI no futuro da engenharia |
+
+---
+
 ## Mapa de Conceitos Transversais
 
 ### Distribuição e Escala
 ```
 Consistent Hashing (27) → DynamoDB internals (23) → Redis Cluster (16)
                        → Chat servers stateful routing (21)
+                       → Facebook Post Search sharding (34)
 ```
 
 ### Consistência e Disponibilidade
 ```
 CAP Theorem (20) → Amazon Dynamo (03) → DynamoDB strong reads (23)
                → Chat delivery guarantees (21) → Live comments eventual (22)
+               → Auction bids SERIALIZABLE (36) → Newsfeed eventual (33)
 ```
 
 ### Busca e Indexação
 ```
-B-Tree (25) → Elasticsearch (18) → Inverted Index (25)
-Geohash (25) → Uber geospatial (12) → Redis geo (16)
+B-Tree (25) → Elasticsearch (18) → Inverted Index (25, 34)
+Geohash (25) → Uber geospatial (12) → Redis geo (16) → PostGIS (35)
 Vector DBs (24) → Recommendation Systems (24)
+Inverted Index custom (34) → vs Elasticsearch (18, 34)
 ```
 
 ### Real-Time e Streaming
 ```
-WebSockets (21, 28) vs SSE (22, 28)
+WebSockets (21, 28) vs SSE (22, 28, 36)
 Kafka (04) → Ad Click Aggregator (14) → Live Comments Pub/Sub (22)
+          → Facebook Post Search write buffer (34)
+          → Instagram Auction durability (36)
+Redis Pub/Sub (16) → WhatsApp (21) → Auction live bids (36)
+```
+
+### Upload e Armazenamento de Mídia
+```
+Object Storage (32) → Pre-signed URLs (13, 30, 32)
+Multipart Upload (30, 32) → Chunking de playback (30)
+Transcoding (30) → HLS/DASH (30) → Adaptive Bitrate (30)
+CDN (30) → Cache de search results (34)
 ```
 
 ### Eficiência de Memória (Big Data)
 ```
 Bloom Filter (26) → WebCrawler deduplication (15)
-Count-Min Sketch (26) → Rate Limiting (02) → Heavy Hitters
+Count-Min Sketch (26) → Rate Limiting (02) → Heavy Hitters → Post Search cold/hot (34)
 HyperLogLog (26) → DAU/MAU analytics
 ```
 
----
+### Fan-out e Propagação de Eventos
+```
+Newsfeed fan-out (33) → Celebrity problem (33)
+Hot Key solution (33) → Hot Shard em DynamoDB (23)
+Notification patterns → Push vs Pull
+```
 
-*Última atualização: Módulo 5 adicionado com 10 novos arquivos de conceitos avançados*
+### ML e Sistemas Inteligentes
+```
+Recommendation Systems (24) → Feature engineering → Model serving
+Content Moderation (37) → Multimodal ML → Multi-task learning
+                        → Two-stage inference → Calibration
+```
+
+### Job Scheduling e Workflows
+```
+SQS delay messages (36) → Cron job evolution
+Temporal IO (36) → Durable execution → Workflow orchestration
+```
+
+### Carreira e Entrevistas
+```
+Behavioral framework (29) → Manager interviews (38)
+System Design framework (10) → Deep dives (30-37)
+ML System Design framework (37) → 6 etapas
+```
