@@ -45,7 +45,7 @@
 
 ---
 
-## Módulo 5 — Conceitos Avançados de System Design (Hello Interview Series)
+## Módulo 5 — Conceitos Avançados de System Design
 
 > Arquivos baseados em deep dives e vídeos técnicos da série Hello Interview
 
@@ -79,6 +79,27 @@
 | `36_design_instagram_auction.md` | Instagram Auction: SSE vs WebSockets, Redis Pub/Sub, SERIALIZABLE isolation, SQS delay, Temporal IO |
 | `37_ml_system_design_content_moderation.md` | ML System Design: framework 6 etapas, transformer multimodal, multi-task learning, two-stage inference, calibração |
 | `38_aprendizado_carreira_engenharia.md` | Como aprender system design, BFS vs DFS, entrevistas de manager, AI no futuro da engenharia |
+
+---
+
+## Módulo 7 — Estudos Técnicos Aprofundados
+
+> Resumos consultivos com enriquecimento técnico de transcrições de vídeos da série Hello Interview. Foco em conceitos aplicados a entrevistas e prática profissional.
+
+| Arquivo | Conteúdo |
+|---|---|
+| `39_api_design.md` | REST (recursos, verbos, paginação, autenticação), GraphQL (N+1, autorização por campo), gRPC/protobuf, JWT vs Session, segurança em APIs |
+| `40_rate_limiter.md` | Token Bucket, Fixed/Sliding Window, Redis Lua Script, race condition, Redis Cluster, fail-open vs fail-closed, configuração dinâmica ZooKeeper |
+| `41_data_modeling.md` | Tipos de banco (SQL/NoSQL/Wide-column), PKs e FKs, normalização vs desnormalização, indexação B-Tree, sharding, roteiro completo para entrevistas |
+| `42_cassandra.md` | Wide column store, Partition Key + Clustering Key, LSM-Tree, Consistent Hashing, Gossip Protocol, Tunable Consistency, query-driven design, write/read path |
+| `43_top_k_system.md` | Tumbling vs sliding windows, pré-agregação com Flink, multi-granularidade, Count-Min Sketch, min-heap para Top-K, TimescaleDB vs InfluxDB |
+| `44_behavioral_interviews.md` | Framework CARL, escalas de escopo por nível, conflito com colega/gerente, projeto com falha, risco calculado, brag document, sinais de nível |
+| `45_sharding.md` | Range-based vs Hash-based vs Consistent Hashing vs Directory-based, hotspots/celebrities, cross-shard queries, Saga Pattern vs 2PC, quando NÃO shardar |
+| `46_caching.md` | Cache-aside vs write-through vs write-behind, LRU/LFU/TTL, Cache Stampede + soluções, cache inconsistency, hot keys, Redis além do cache |
+| `47_time_series_databases.md` | LSM-Tree, delta encoding, delta of deltas, XOR encoding, time-based partitioning, bloom filters, downsampling, cardinalidade alta como limitação |
+| `48_low_level_design.md` | Framework 5 etapas, SRP, enum vs booleans, Connect 4 completo, Amazon Locker completo, anti-padrões, extensibilidade |
+| `49_ml_bot_detection.md` | Problem framing adversarial, late fusion architecture, GraphSAGE, GRU, self-supervised pre-training, multi-task learning, calibração, two-stage inference, Isolation Forest, Autoencoder |
+| `50_concurrency_queues.md` | Check-then-act, Read-modify-write, Lock vs Atomic, Blocking Queue, Semaphore, Connection Pool, RabbitMQ vs Kafka, offset, delivery guarantees, DLQ |
 
 ---
 
